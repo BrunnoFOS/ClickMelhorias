@@ -3,15 +3,15 @@
     <nav class="navbar navbar-inverse" role="navigation">
       <div class="navbar-header">
         <div class="logosmall">
-          <img src="<?php echo base_url() . 'public/img/favicon_click.svg'?>">
+        <img src="<?php echo base_url() . 'public/img/logo_click.png'?>">
         </div>
       </div>
       <div class="collapse navbar-collapse" id="navbar-collapse-01">
         <ul class="nav navbar-nav">
-          <li><a href="<?php echo base_url() . 'admin'; ?>">Dashboard</a></li>
-          <li><a href="<?php echo base_url() . 'admin/ideas'; ?>">Ideas and Comments</a></li>
-          <li><a href="<?php echo base_url() . 'admin/users'; ?>">Users Management</a></li>
-          <li class="active"><a href="<?php echo base_url() . 'admin/system'; ?>">System Settings</a></li>
+          <li><a href="<?php echo base_url() . 'admin'; ?>">Histórico de ações</a></li>
+          <li><a href="<?php echo base_url() . 'admin/ideas'; ?>">Ideias e comentários</a></li>
+          <li><a href="<?php echo base_url() . 'admin/users'; ?>">Gerenciamento de usuários</a></li>
+          <li class="active"><a href="<?php echo base_url() . 'admin/system'; ?>">Configurações do sistema</a></li>
         </ul>
           <p class="navbar-text navbar-right">Signed in as <span style="color:#27AE60"><?php echo $_SESSION['phpback_username']; ?></span><a href="<?php echo base_url() . 'action/logout'; ?>"><button type="button" class="btn btn-danger btn-xs" style="margin-left:10px;">Log out</button></a></p>
       </div><!-- /.navbar-collapse -->
