@@ -16,26 +16,26 @@
           <li><a href="<?php echo base_url() . 'admin/system'; ?>">Configurações do sistema</a></li>
           <?php } } ?>
         </ul>
-          <p class="navbar-text navbar-right">Signed in as <span style="color:#27AE60"><?php echo $_SESSION['phpback_username']; ?></span><a href="<?php echo base_url() . 'action/logout'; ?>"><button type="button" class="btn btn-danger btn-xs" style="margin-left:10px;">Log out</button></a></p>
+          <p class="navbar-text navbar-right">Conectado como <span style="color:#27AE60"><?php echo $_SESSION['phpback_username']; ?></span><a href="<?php echo base_url() . 'action/logout'; ?>"><button type="button" class="btn btn-danger btn-xs" style="margin-left:10px;">Sair</button></a></p>
 
       </div><!-- /.navbar-collapse -->
     </nav><!-- /navbar -->
     <div>
-      <h5>Ideas and comments</h5>
+      <h5>Ideias e comentários</h5>
       <ul class="nav nav-tabs">
-        <li id="table1" class="active"><a onclick="showtable('newideastable','table1');">New Ideas <span class="badge"><?php echo $newideas_num;?></span></a></li>
-        <li id="table2"><a onclick="showtable('allideastable','table2');">All Ideas </a></li>
-        <li id="table3"><a onclick="showtable('commentstable','table3');">Flagged comments</a></li>
+        <li id="table1" class="active"><a onclick="showtable('newideastable','table1');">Novas ideias<span class="badge"><?php echo $newideas_num;?></span></a></li>
+        <li id="table2"><a onclick="showtable('allideastable','table2');">Todas as ideias</a></li>
+        <li id="table3"><a onclick="showtable('commentstable','table3');">Comentários denunciados</a></li>
       </ul>
       <div id="listing">
         <table id="newideastable" class="table table-condensed" style="">
           <thead>
                 <tr>
-                  <th>Idea</th>
-                  <th>Category</th>
-                  <th>Comments</th>
-                  <th>Votes</th>
-                  <th>Date</th>
+                  <th>Ideia</th>
+                  <th>Categoria</th>
+                  <th>Comentários</th>
+                  <th>Votos</th>
+                  <th>Data</th>
                 </tr>
             </thead>
               <tbody>
@@ -67,10 +67,10 @@
                 <?php echo $categories[$idea->categoryid]->name; ?>
               </td>
               <td>
-                <?php echo $idea->comments; ?> Comments
+                <?php echo $idea->comments; ?> Comentários
               </td>
               <td>
-                <?php echo $idea->votes; ?> Votes
+                <?php echo $idea->votes; ?> Votos
               </td>
               <td>
                 <?php echo $idea->date; ?>
@@ -90,7 +90,7 @@
                   <label>Status</label>
                 </td>
                 <td>
-                  <label>Categories</label>
+                  <label>Categorias</label>
                 </td>
               </tr>
             </thead>
@@ -100,23 +100,23 @@
               <div class="form-group">
                 <label class="checkbox">
                   <input type="checkbox" <?php if($form['status-completed']): ?>checked="checked" <?php endif; ?> name="status-completed" data-toggle="checkbox">
-                  Completed
+                  Realizadas
                 </label>
                 <label class="checkbox">
                   <input type="checkbox" <?php if($form['status-started']): ?>checked="checked" <?php endif; ?> name="status-started"  data-toggle="checkbox">
-                  Started
+                  Em andamento
                 </label>
                 <label class="checkbox">
                   <input type="checkbox" <?php if($form['status-planned']): ?>checked="checked" <?php endif; ?> name="status-planned"  data-toggle="checkbox">
-                  Planned
+                  Planejado
                 </label>
                 <label class="checkbox">
                   <input type="checkbox" <?php if($form['status-considered']): ?>checked="checked" <?php endif; ?> name="status-considered" data-toggle="checkbox">
-                  Under Consideration
+                  Em avaliação
                 </label>
                 <label class="checkbox">
                   <input type="checkbox" <?php if($form['status-declined']): ?>checked="checked" <?php endif; ?> name="status-declined" data-toggle="checkbox">
-                  Declined
+                  Não aprovado
                 </label>
               </div>
               </td>
@@ -134,21 +134,21 @@
               <tr>
               <td>
                 <select class="form-control" name="orderby">
-                  <option value="votes">Order by Votes</option>
-                  <option value="id" <?php if($form['orderby'] == 'id') echo 'selected=""';?> >Order by Date</option>
-                  <option value="title" <?php if($form['orderby'] == 'title') echo 'selected=""';?>>Order by Title</option>
+                  <option value="votes">Ordernar por votos</option>
+                  <option value="id" <?php if($form['orderby'] == 'id') echo 'selected=""';?> >Ordernar por data</option>
+                  <option value="title" <?php if($form['orderby'] == 'title') echo 'selected=""';?>>Ordernar por título</option>
                 </select>
                </td>
                <td style="padding-left:10px;">
                  <label class="checkbox"t>
                     <input type="checkbox" <?php if($form['isdesc']) echo 'checked=""';?> name="isdesc" data-toggle="checkbox">
-                    Descresing order
+                    Ordem descrescente
                   </label>
                </td>
               </tr>
               <tr>
               <td colspan="2" style="padding-top:5px;padding-bottom:10px">
-                <button type="submit" class="btn btn-primary" style="width:160px">Search</button>
+                <button type="submit" class="btn btn-primary" style="width:160px">Pesquisar</button>
               </td>
               </tr>
               </tbody>
@@ -159,10 +159,10 @@
           <table class="table table-condensed" style="font-size:15px;width:100%">
             <thead>
             <tr>
-              <th>Idea</th>
-              <th>Category</th>
-              <th>Votes</th>
-              <th>Date</th>
+              <th>Ideia</th>
+              <th>Categoria</th>
+              <th>Votos</th>
+              <th>Data</th>
             </tr>
          </thead>
           <tbody>
@@ -194,7 +194,7 @@
             <?php echo $categories[$idea->categoryid]->name; ?>
           </td>
           <td>
-            <?php echo $idea->votes; ?> Votes
+            <?php echo $idea->votes; ?> Votos
           </td>
           <td>
             <?php echo $idea->date; ?>
@@ -209,18 +209,18 @@
           <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Comment</th>
-                  <th>Flags</th>
+                  <th>Comentário</th>
+                  <th>Denúncias</th>
                 </tr>
           </thead>
           <tbody>
                 <?php foreach ($flags as $comment) : ?>
                   <tr>
                   <td>
-                    Comment: #<?php echo $comment['id'];?>
-                    <br>User:
+                    Comentário: #<?php echo $comment['id'];?>
+                    <br>Usuário:
                     <a href="<?php echo base_url() . 'admin/users/' . $comment['userid'];?>">#<?php echo $comment['userid'];?></a>
-                    <br>Idea:
+                    <br>Ideia:
                     <a href="<?php echo base_url() . 'home/idea/' . $comment['ideaid'];?>" target="_blank">#<?php echo $comment['userid'];?></a>
                   </td>
                   <td>
@@ -229,10 +229,10 @@
                     </samp>
                   </td>
                   <td>
-                    <span style="font-size:17px;">Flagged <span class="badge"><?php echo $comment['votes']; ?></span><span style="font-size:17px;"> times</span>
+                    <span style="font-size:17px;">Denunciado <span class="badge"><?php echo $comment['votes']; ?></span><span style="font-size:17px;"> vezes</span>
                     <div class="pull-right">
-                      <button name="Delete votes" type="submit" class="btn btn-warning btn-sm" style="width:130px" <?php $temp = base_url() . 'adminaction/deletecomment/' . $comment['id']; ?> onclick="popup_sure('Are you sure you want to delete this comment?','<?php echo $temp; ?>');">Delete Comment</button>
-                      <?php if($_SESSION['phpback_isadmin'] > 1): ?><a href="<?php echo base_url() . 'admin/users/' . $comment['userid']; ?>"><button type="submit" class="btn btn-danger btn-sm" style="width:130px">Ban User</button></a><?php endif;?>
+                      <button name="Delete votes" type="submit" class="btn btn-warning btn-sm" style="width:130px" <?php $temp = base_url() . 'adminaction/deletecomment/' . $comment['id']; ?> onclick="popup_sure('Are you sure you want to delete this comment?','<?php echo $temp; ?>');">Excluir comentário</button>
+                      <?php if($_SESSION['phpback_isadmin'] > 1): ?><a href="<?php echo base_url() . 'admin/users/' . $comment['userid']; ?>"><button type="submit" class="btn btn-danger btn-sm" style="width:130px">Banir usuário</button></a><?php endif;?>
                     </div>
                   </td>
                   </tr>

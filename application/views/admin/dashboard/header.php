@@ -13,7 +13,7 @@ See LICENSE.TXT for details.  -->
   <title>ClickMelhorias - Painel de Administrador</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <link rel="icon" type="image/x-icon" href="<?php echo base_url(); ?>favicon.ico" sizes="16x16">
+  <link rel="icon" type="image/x-icon" href="public/img/favicon_click.svg" sizes="16x16">
 
   <!-- Loading Bootstrap -->
   <link href="<?php echo base_url(); ?>public/bootstrap/css/bootstrap.css" rel="stylesheet">
